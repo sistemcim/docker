@@ -22,11 +22,15 @@ The tricky part here is, `id_rsa.pub` file under ssh folder is also **mapped to 
 There is one more file under ssh directory: `rebuild_known_hosts.sh`. This script is run with `docker exec` after clients are run. You may find it in client/newClient.sh. It scans client keys and add them to server's /root/.ssh/known_hosts file to prevent prompt on first ssh connection. Another way of preventing ssh client check message is modifying host_key_checking option in ansible. Details are here : http://docs.ansible.com/ansible/intro_getting_started.html#host-key-checking
 
 ### CLIENT
-Ansible client has nothing different from ubuntu docker image exept ssh-server and python. client/Dockerfile updates base image and installs these two packages. I used client image name as "ansible_client_ubuntu"
+Ansible client has nothing different from ubuntu docker image exept `ssh-server` and `python`. client/Dockerfile updates base image and installs these two packages. I used client image name as "ansible_client_ubuntu"
 As you see, there are several script files under client directory. Let's see what they are:
-- `run.sh` : To run client in interactive mode.
-- `run_d.sh`: To run client in daemon mode.
-- `start_sshd.sh`: To start sshd service on all clients run from base image "ansible_client_ubuntu".
-- `get_client_ip.sh`: List name and ip addresses of clients run from "ansible_client_ubuntu".
-- `newClient.sh` : This script gets a parameter, *count* of the image, and runs run_d.sh `count` times. Then start_sshd.sh and get_client_ip.sh At the end, rebuilds known_hosts file of the server.
+- `run.sh` : Runs client in interactive mode.
+- `run_d.sh`: Runs client in daemon mode.
+- `start_sshd.sh`: Starts sshd service on all clients run from base image "ansible_client_ubuntu".
+- `get_client_ip.sh`: Lists name and ip addresses of clients run from "ansible_client_ubuntu".
+- `newClient.sh` : Gets a parameter, *count* of the client, and runs run_d.sh `count` times. Then `start_sshd.sh` and `get_client_ip.sh` At the end, rebuilds known_hosts file of the server.
 - `kill_d.sh`: Stops and removes all containers run from "ansible_client_ubuntu".
+
+That is all folks to have a sample ansible environment :) Of course things can be more automated or manual. You may change them according to your comfort.
+
+Good days...
