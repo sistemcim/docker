@@ -1,11 +1,13 @@
 This place is my ansible playground.
 
-I prepared these scripts inside folders to automatically prepare my ansible testing environment. As seen, there are two folders: "server" and "client".
+I prepared scripts inside folders to automatically prepare my ansible testing environment. As seen, there are two folders: "server" and "client".
 
 It is simple, server is used to run ansible management server and client is used to run ansible managed hosts.
 Both server and clients are based on Ubuntu image.
 
 SERVER:
+******
+
 To run server, you must create server image first by using Dockerfile. It updates base image, installs ansible and utilities such as iputils-ping ssh-client and vim. I need these utilities to work and debug.
 There are two folders that map to ansible server:
 - ansible
