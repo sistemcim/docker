@@ -4,5 +4,6 @@ do
 	ssh-keyscan $i >> /root/.ssh/known_hosts
 done
 
-echo "Testing..."
+echo ""
+echo "Testing ansible ping..."
 ansible all -m ping
