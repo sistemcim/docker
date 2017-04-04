@@ -1,3 +1,5 @@
+After reading below but before taking an action, check compose folder ;)
+
 ## MY LITTLE ANSIBLE PLANET
 This place is my ansible playground.I prepared scripts inside folders to automatically prepare my ansible testing environment. As seen, there are two folders: "server" and "client".
 
