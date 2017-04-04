@@ -9,7 +9,7 @@ docker run \
 	-d \
        --name $CONTAINER_NAME \
  	-v /usr/local/docker/ansible/server/ssh/id_rsa.pub:/root/.ssh/authorized_keys:ro \
-       ansible_client_ubuntu tail -f /dev/null
+       ansible_client_ubuntu 
 
 #docker container ls -f "ancestor=$CLIENT_IMAGE" --format {{.Names}}
 #docker cp "../server/server_with_sshkey/ssh/id_rsa.pub" "$CONTAINER_NAME:/root/.ssh/authorized_keys"
