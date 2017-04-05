@@ -1,0 +1,17 @@
+version: "3"
+services:
+ server:
+  image: ansible_server2_ubuntu
+  container_name: ansible_server
+  hostname: ansible_server
+  volumes:
+  - /usr/local/docker/ansible/server/ansible:/etc/ansible
+  - /usr/local/docker/ansible/server/ssh:/root/.ssh
+
+ client:
+  image: ansible_client_ubuntu
+  depends_on:
+  - server 
+  volumes:
+  - /usr/local/docker/ansible/server/ssh/id_rsa.pub:/root/.ssh/authorized_keys:ro
+
