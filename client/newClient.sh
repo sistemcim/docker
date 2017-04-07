@@ -3,10 +3,10 @@ COUNT=$1
 for i in $(seq 1 $COUNT)
 do
 	echo $i
-	./run_d.sh
+	./run.sh
 done
 
-./start_sshd.sh
+./start_ssh.sh
 ./get_client_ip.sh
 
 echo ""

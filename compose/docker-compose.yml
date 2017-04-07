@@ -1,7 +1,7 @@
 version: "3"
 services:
  server:
-  image: ansible_server2_ubuntu
+  image: ansible_server_ubuntu
   container_name: ansible_server
   hostname: ansible_server
   volumes:
