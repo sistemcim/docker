@@ -38,6 +38,8 @@ To sum up:
 2. Go to client directory and run `newClient.sh 3`
 3. Run `docker exec -it ansibleServer /bin/bash`
 4. Begin using ansible like `ansible all -m ping`
+5. When finished, `exit` server.
+6. To stop and remove containers, run `kill.sh` in both server and client folder.
  
 That is all folks to have a sample ansible environment :) Of course things can be more automated or manual. You may change them according to your comfort.
 
